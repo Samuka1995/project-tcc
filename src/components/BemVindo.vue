@@ -28,7 +28,7 @@
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-custom" href="#">Novo Cadastro</a>
+          <a class="nav-link nav-custom" href="/cadastro">Novo Cadastro</a>
         </li>
       </ul>
     </div>
