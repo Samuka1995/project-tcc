@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Cadastro from '../components/Cadastro.vue'
+import TermoUso from '../components/TermoUso'
+import RecuperarSenha from '../components/RecuperarSenha'
 
 const routes = [
   {
-    path: '/login',
+    path: '/',
     name: 'login',
     component: Login
   },
@@ -12,6 +14,16 @@ const routes = [
     path: '/cadastro',
     name: 'cadastro',
     component: Cadastro
+  },
+  {
+    path: '/termo-uso',
+    name: 'termoUso',
+    component: TermoUso
+  },
+  {
+    path: '/recuperar-senha',
+    name: 'recuperarSenha',
+    component: RecuperarSenha
   }
 ]
 

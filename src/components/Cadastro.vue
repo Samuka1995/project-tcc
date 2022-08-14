@@ -43,10 +43,16 @@
           >Confirmar Senha</label
         >
       </div>
-      <button type="submit" class="btn w-25 mt-5 mb-4">Cadastrar</button>
-      <div class="d-flex mt-5">
+      <button
+        type="submit"
+        class="btn w-25 mt-5 mb-4"
+        @click="retornaPaginaLogin"
+      >
+        Cadastrar
+      </button>
+      <div class="d-flex mt-5 align-baseline">
         <p>Ao se cadastrar, você concorda com o nosso</p>
-        <a class="text-decoration-none" href="#">Termo de Uso</a>
+        <a class="text-decoration-none" href="termo-uso">Termo de Uso</a>
       </div>
     </div>
   </div>
@@ -57,6 +63,14 @@ export default {
   name: "BemVindo",
   props: {
     msg: String,
+  },
+  methods: {
+    retornaPaginaLogin() {
+      console.log("ola");
+      this.$router.push({
+        name: "login",
+      });
+    },
   },
 
   data() {
@@ -104,6 +118,8 @@ export default {
 }
 .d-flex {
   background: #111111;
+  flex-direction: row;
+  align-items: baseline;
 }
 .input-label {
   background: #767676;
@@ -119,12 +135,6 @@ export default {
   border: none;
   height: 38px;
 }
-.header-logo {
-  position: absolute;
-  color: white;
-  margin: -5% 85%;
-  z-index: 2;
-}
 h2 {
   position: relative;
   right: 40%;
@@ -133,11 +143,13 @@ h2 {
   padding: 20px;
 }
 p {
+  font-size: 20px;
   background: #111111;
   color: #767676;
-  margin-right: 4px;
+  margin-right: 5px;
 }
 a {
+  font-size: 16px;
   background: #111111;
   color: white;
   font-weight: 700;

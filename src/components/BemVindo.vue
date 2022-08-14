@@ -23,7 +23,10 @@
       <button type="submit" class="btn w-25 mt-5">Entrar</button>
       <ul class="nav flex-column mt-5">
         <li class="nav-item">
-          <a class="nav-link active nav-custom" aria-current="page" href="#"
+          <a
+            class="nav-link active nav-custom"
+            aria-current="page"
+            href="recuperar-senha"
             >Recuperar Senha</a
           >
         </li>
