@@ -2,7 +2,7 @@
   <div style="background: #111111; border-radius: 10px 10px 0 0">
     <h1 class="header-logo">Wyden</h1>
     <div class="container">
-      <h2>Recupere sua Senha.</h2>
+      <h2>E-mail de recuperação de Senha.</h2>
       <div class="form-floating mb-3 w-50">
         <input
           type="email"
@@ -11,27 +11,7 @@
           placeholder="name@example.com"
         />
         <label class="input-label" for="floatingInput"
-          >Código de validação</label
-        >
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword">Senha</label>
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword"
-          >Confirmar Senha</label
+          >E-mail Institucional</label
         >
       </div>
       <button
@@ -39,7 +19,7 @@
         class="btn w-25 mt-5 mb-4"
         @click="retornaPaginaLogin"
       >
-        Recuperar Senha
+        Enviar E-mail
       </button>
     </div>
   </div>
@@ -49,9 +29,8 @@
 export default {
   methods: {
     retornaPaginaLogin() {
-      console.log("ola");
       this.$router.push({
-        name: "login",
+        name: "recuperarSenha",
       });
     },
   },
@@ -70,19 +49,6 @@ export default {
   flex-direction: column;
   justify-content: center;
 }
-.form-floating {
-  background: #111111;
-}
-.form-floating input {
-  color: white;
-}
-.form-floating > label {
-  background: transparent;
-}
-#floatingInput,
-#floatingPassword {
-  background: #767676;
-}
 .form-control {
   border: none;
 }
@@ -90,9 +56,18 @@ export default {
   border-color: #767676;
   box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
 }
-.input-label {
+#floatingInput {
   background: #767676;
-  border-radius: 5px;
+}
+.form-floating {
+  background: #111111;
+  bottom: 10%;
+}
+.form-floating input {
+  color: white;
+}
+.form-floating > label {
+  background: transparent;
 }
 .btn {
   background: #9146ff;
@@ -107,7 +82,7 @@ export default {
 h2 {
   position: relative;
   right: 40%;
-  bottom: 11%;
+  bottom: 20%;
   width: 225px;
   background: #111111;
 }

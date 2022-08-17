@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Login from '../views/Login.vue'
 import Cadastro from '../components/Cadastro.vue'
 import TermoUso from '../components/TermoUso'
+import EmailRecuperarSenha from '../components/EmailRecuperarSenha'
 import RecuperarSenha from '../components/RecuperarSenha'
+import SolicitacaoReserva from '../components/SolicitacaoReserva'
 
 const routes = [
   {
@@ -21,9 +23,19 @@ const routes = [
     component: TermoUso
   },
   {
+    path: '/email-recuperar-senha',
+    name: 'emailRecuperarSenha',
+    component: EmailRecuperarSenha
+  },
+  {
     path: '/recuperar-senha',
     name: 'recuperarSenha',
     component: RecuperarSenha
+  },
+  {
+    path: '/solicitacao-reserva',
+    name: 'solicitacaoReserva',
+    component: SolicitacaoReserva
   }
 ]
 

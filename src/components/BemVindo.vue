@@ -20,13 +20,15 @@
         />
         <label class="input-label" for="floatingPassword">Senha</label>
       </div>
-      <button type="submit" class="btn w-25 mt-5">Entrar</button>
+      <button type="submit" class="btn w-25 mt-5" @click="proxima">
+        Entrar
+      </button>
       <ul class="nav flex-column mt-5">
         <li class="nav-item">
           <a
             class="nav-link active nav-custom"
             aria-current="page"
-            href="recuperar-senha"
+            href="email-recuperar-senha"
             >Recuperar Senha</a
           >
         </li>
@@ -113,6 +115,6 @@ h2 {
   right: 40%;
   width: 225px;
   background: #111111;
-  padding: 20px;
+  top: 7%;
 }
 </style>

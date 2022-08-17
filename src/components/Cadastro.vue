@@ -66,7 +66,6 @@ export default {
   },
   methods: {
     retornaPaginaLogin() {
-      console.log("ola");
       this.$router.push({
         name: "login",
       });
@@ -140,7 +139,7 @@ h2 {
   right: 40%;
   width: 225px;
   background: #111111;
-  padding: 20px;
+  top: 7%;
 }
 p {
   font-size: 20px;
