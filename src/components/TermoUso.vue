@@ -108,6 +108,7 @@ a {
 }
 ol,
 p {
+  font-size: 18px;
   background: #ffffff;
   color: black;
 }

@@ -8,9 +8,18 @@
           type="name"
           class="form-control"
           id="floatingInput"
-          placeholder="José Antonio dos Santos"
+          placeholder="Samuel de Souza"
         />
         <label class="input-label" for="floatingInput">Nome Completo</label>
+      </div>
+      <div class="form-floating mb-3 w-50">
+        <input
+          type="text"
+          class="form-control"
+          id="floatingInput"
+          placeholder="RA:"
+        />
+        <label class="input-label" for="floatingInput">RA</label>
       </div>
       <div class="form-floating mb-3 w-50">
         <input

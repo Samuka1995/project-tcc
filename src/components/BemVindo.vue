@@ -20,7 +20,7 @@
         />
         <label class="input-label" for="floatingPassword">Senha</label>
       </div>
-      <button type="submit" class="btn w-25 mt-5" @click="proxima">
+      <button type="submit" class="btn w-25 mt-5" @click="solicitacaoReserva">
         Entrar
       </button>
       <ul class="nav flex-column mt-5">
@@ -51,6 +51,13 @@ export default {
     return {
       user: "Samuel",
     };
+  },
+  methods: {
+    solicitacaoReserva() {
+      this.$router.push({
+        name: "solicitacaoReserva",
+      });
+    },
   },
 };
 </script>
