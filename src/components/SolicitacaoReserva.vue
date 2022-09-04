@@ -1,9 +1,7 @@
 <template>
-  <div style="background: #111111; border-radius: 10px 10px 0 0">
-    <h1 class="header-logo">Solicitação de Reserva</h1>
-    <div class="container">
-      <h2>Reserve seu computador para:</h2>
-      <!-- <div class="container-checkbox">
+  <div class="container">
+    <h2>Reserve seu computador para:</h2>
+    <!-- <div class="container-checkbox">
         <div
           class="form-check form-switch"
           style="background: #292929; width: 100%"
@@ -78,16 +76,15 @@
           >
         </div>
       </div> -->
-      <h3 style="background: #111111">Selecione o horário</h3>
-      <div class="date-picker">
-        <input type="date" v-model="mydate" />
-        <input type="time" v-model="mytime" />
-        <h4>{{ mydate }}</h4>
-        <h4>{{ mytime }}</h4>
-      </div>
-      <button type="submit" class="btn w-25 mt-1">Selecione Horário</button>
-      <button type="submit" class="btn w-25">Solicitar</button>
+    <h3 style="background: #111111">Selecione o horário</h3>
+    <div class="date-picker">
+      <input type="date" v-model="mydate" />
+      <input type="time" v-model="mytime" />
+      <h4>{{ mydate }}</h4>
+      <h4>{{ mytime }}</h4>
     </div>
+    <button type="submit" class="btn w-25 mt-1">Selecione Horário</button>
+    <button type="submit" class="btn w-25">Solicitar</button>
   </div>
 </template>
 
@@ -130,11 +127,9 @@ export default {
   align-items: center;
 }
 .container {
-  margin-top: 15vh;
   background: #111111;
   color: #ffffff;
-  width: 100%;
-  height: 85vh;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -191,11 +186,6 @@ export default {
 .date-picker {
   width: 200px;
   height: 200px;
-}
-
-h1 {
-  margin-left: 38%;
-  width: 100vh;
 }
 h2 {
   margin: 50px 0 0 30%;

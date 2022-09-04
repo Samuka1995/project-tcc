@@ -1,42 +1,35 @@
 <template>
-  <div>
-    <div class="container">
-      <h2>{{ msg }}</h2>
-      <div class="form-floating mt-5 mb-5 w-50">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-        />
-        <label class="input-label" for="floatingInput">E-mail</label>
-      </div>
-      <div class="form-floating w-50">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword">Senha</label>
-      </div>
-      <button type="submit" class="btn w-25 mt-5" @click="solicitacaoReserva">
-        Entrar
-      </button>
-      <ul class="nav flex-column mt-5">
-        <li class="nav-item">
-          <a
-            class="nav-link active nav-custom"
-            aria-current="page"
-            href="email-recuperar-senha"
-            >Recuperar Senha</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-custom" href="/cadastro">Novo Cadastro</a>
-        </li>
-      </ul>
+  <div class="container">
+    <h2>Bem vindo, faça o Login.</h2>
+    <div class="form-floating mt-5 mb-5 w-50">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label class="input-label" for="floatingInput">E-mail</label>
     </div>
+    <div class="form-floating w-50">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label class="input-label" for="floatingPassword">Senha</label>
+    </div>
+    <button type="submit" class="btn w-25 mt-5" @click="solicitacaoReserva">
+      Entrar
+    </button>
+    <ul class="nav flex-column mt-5">
+      <router-link to="/email-recuperar-senha" class="links">
+        <span>Recuperar Senha </span>
+      </router-link>
+      <router-link to="/cadastro" class="links">
+        <span>Novo Cadastro</span>
+      </router-link>
+    </ul>
   </div>
 </template>
 
@@ -55,7 +48,7 @@ export default {
   methods: {
     solicitacaoReserva() {
       this.$router.push({
-        name: "solicitacaoReserva",
+        name: "login.solicitacaoreserva",
       });
     },
   },
@@ -64,11 +57,10 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 15vh;
+  border-radius: 10px 10px 0 0;
   background: #111111;
   color: #ffffff;
-  width: 100%;
-  height: 85vh;
+  margin-top: 50px;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -117,9 +109,14 @@ export default {
 .nav-custom {
   background: #111111;
 }
+.links {
+  text-decoration: none;
+  color: #ffffff;
+  margin-top: 8px;
+}
 h2 {
   position: relative;
-  right: 40%;
+  right: 41%;
   width: 225px;
   background: #111111;
   top: 7%;

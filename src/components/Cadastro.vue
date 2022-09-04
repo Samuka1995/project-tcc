@@ -1,68 +1,63 @@
 <template>
-  <div style="background: #111111; border-radius: 10px 10px 0 0">
-    <h1 class="header-logo">Wyden</h1>
-    <div class="container">
-      <h2>Realize seu Cadastro.</h2>
-      <div class="form-floating mb-3 w-50">
-        <input
-          type="name"
-          class="form-control"
-          id="floatingInput"
-          placeholder="Samuel de Souza"
-        />
-        <label class="input-label" for="floatingInput">Nome Completo</label>
-      </div>
-      <div class="form-floating mb-3 w-50">
-        <input
-          type="text"
-          class="form-control"
-          id="floatingInput"
-          placeholder="RA:"
-        />
-        <label class="input-label" for="floatingInput">RA</label>
-      </div>
-      <div class="form-floating mb-3 w-50">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-        />
-        <label class="input-label" for="floatingInput"
-          >E-mail Institucional</label
-        >
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword">Senha</label>
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword"
-          >Confirmar Senha</label
-        >
-      </div>
-      <button
-        type="submit"
-        class="btn w-25 mt-5 mb-4"
-        @click="retornaPaginaLogin"
+  <div class="container">
+    <h2>Realize seu Cadastro.</h2>
+    <div class="form-floating mb-3 w-50 mt-5">
+      <input
+        type="name"
+        class="form-control"
+        id="floatingInput"
+        placeholder="Samuel de Souza"
+      />
+      <label class="input-label" for="floatingInput">Nome Completo</label>
+    </div>
+    <div class="form-floating mb-3 w-50">
+      <input
+        type="text"
+        class="form-control"
+        id="floatingInput"
+        placeholder="RA:"
+      />
+      <label class="input-label" for="floatingInput">RA</label>
+    </div>
+    <div class="form-floating mb-3 w-50">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label class="input-label" for="floatingInput"
+        >E-mail Institucional</label
       >
-        Cadastrar
-      </button>
-      <div class="d-flex mt-5 align-baseline">
-        <p>Ao se cadastrar, você concorda com o nosso</p>
-        <a class="text-decoration-none" href="termo-uso">Termo de Uso</a>
-      </div>
+    </div>
+    <div class="form-floating w-50 mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label class="input-label" for="floatingPassword">Senha</label>
+    </div>
+    <div class="form-floating w-50 mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label class="input-label" for="floatingPassword">Confirmar Senha</label>
+    </div>
+    <button
+      type="submit"
+      class="btn w-25 mt-5 mb-4"
+      @click="retornaPaginaLogin"
+    >
+      Cadastrar
+    </button>
+    <div class="d-flex mt-5 align-baseline">
+      <p>Ao se cadastrar, você concorda com o nosso</p>
+      <a class="text-decoration-none" href="termo-uso">Termo de Uso</a>
     </div>
   </div>
 </template>
@@ -91,11 +86,10 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 15vh;
+  margin-top: 50px;
   background: #111111;
   color: #ffffff;
   width: 100%;
-  height: 85vh;
   align-items: center;
   display: flex;
   flex-direction: column;

@@ -1,47 +1,40 @@
 <template>
-  <div style="background: #111111; border-radius: 10px 10px 0 0">
-    <h1 class="header-logo">Wyden</h1>
-    <div class="container">
-      <h2>Recupere sua Senha.</h2>
-      <div class="form-floating mb-3 w-50">
-        <input
-          type="email"
-          class="form-control"
-          id="floatingInput"
-          placeholder="name@example.com"
-        />
-        <label class="input-label" for="floatingInput"
-          >Código de validação</label
-        >
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword">Senha</label>
-      </div>
-      <div class="form-floating w-50 mb-3">
-        <input
-          type="password"
-          class="form-control"
-          id="floatingPassword"
-          placeholder="Password"
-        />
-        <label class="input-label" for="floatingPassword"
-          >Confirmar Senha</label
-        >
-      </div>
-      <button
-        type="submit"
-        class="btn w-25 mt-5 mb-4"
-        @click="retornaPaginaLogin"
-      >
-        Recuperar Senha
-      </button>
+  <div class="container">
+    <h2>Recupere sua Senha.</h2>
+    <div class="form-floating mb-3 w-50">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+      />
+      <label class="input-label" for="floatingInput">Código de validação</label>
     </div>
+    <div class="form-floating w-50 mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label class="input-label" for="floatingPassword">Senha</label>
+    </div>
+    <div class="form-floating w-50 mb-3">
+      <input
+        type="password"
+        class="form-control"
+        id="floatingPassword"
+        placeholder="Password"
+      />
+      <label class="input-label" for="floatingPassword">Confirmar Senha</label>
+    </div>
+    <button
+      type="submit"
+      class="btn w-25 mt-5 mb-4"
+      @click="retornaPaginaLogin"
+    >
+      Recuperar Senha
+    </button>
   </div>
 </template>
 
@@ -60,11 +53,8 @@ export default {
 
 <style scoped>
 .container {
-  margin-top: 15vh;
-  background: #111111;
+  margin-top: 50px;
   color: #ffffff;
-  width: 100%;
-  height: 85vh;
   align-items: center;
   display: flex;
   flex-direction: column;
