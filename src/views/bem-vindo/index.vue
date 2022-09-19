@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>Bem vindo, faça o Login.</h2>
-    <div class="form-floating mt-5 mb-5 w-50">
+    <div class="form-floating mb-5 w-50">
       <input
         type="email"
         class="form-control"
@@ -35,7 +35,7 @@
 
 <script>
 export default {
-  name: "BemVindo",
+  name: "bem-vindo",
   props: {
     msg: String,
   },

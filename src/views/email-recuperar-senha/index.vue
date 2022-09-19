@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>E-mail de recuperação de Senha.</h2>
-    <div class="form-floating mb-3 w-50 mt-5">
+    <div class="form-floating mb-3 w-50">
       <input
         type="email"
         class="form-control"
@@ -24,6 +24,7 @@
 
 <script>
 export default {
+  name: 'email-recuperar-senha',
   methods: {
     retornaPaginaLogin() {
       this.$router.push({

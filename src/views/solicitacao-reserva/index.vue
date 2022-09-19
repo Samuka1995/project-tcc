@@ -76,46 +76,31 @@
           >
         </div>
       </div> -->
-    <h3 style="background: #111111">Selecione o horário</h3>
-    <div class="date-picker">
-      <input type="date" v-model="mydate" />
-      <input type="time" v-model="mytime" />
-      <h4>{{ mydate }}</h4>
-      <h4>{{ mytime }}</h4>
+
+    <h3 style="background: #111111">Selecione o dia e horário</h3>
+    <div style="background: #fff">
+      <date-picker class="dp__theme_light" v-model="valorHora" style="fill: red"></date-picker>
     </div>
+    <div>{{ valorHora }}</div>
     <button type="submit" class="btn w-25 mt-1">Selecione Horário</button>
-    <button type="submit" class="btn w-25">Solicitar</button>
+    <button @click="reservaComputador" type="submit" class="btn w-25">Solicitar</button>
   </div>
 </template>
 
 <script>
+import DatePicker from '@/components/date-picker/date-picker.vue'
 export default {
-  components: {},
-  data() {
-    return {
-      value: "",
-      state: "disabled",
-      context: null,
-      mydate: null,
-      mytime: null,
-    };
+  name: 'solicitacao-reserva',
+
+  components: {
+    DatePicker
   },
+
   methods: {
-    retornaPaginaLogin() {
+    reservaComputador() {
       this.$router.push({
-        name: "RecuperarSenha",
+        name: "login.reservacomputador",
       });
-    },
-  },
-  computed: {
-    today() {
-      return this.state === "disabled";
-    },
-    tomorrow() {
-      return this.state === "tomorrow";
-    },
-    plusDate() {
-      return this.state === "plusDate";
     },
   },
 };
@@ -129,7 +114,7 @@ export default {
 .container {
   background: #111111;
   color: #ffffff;
-
+  justify-content: center;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -188,8 +173,7 @@ export default {
   height: 200px;
 }
 h2 {
-  margin: 50px 0 0 30%;
-  width: 100vh;
+  margin: 50px 0 0 0;
   background: #111111;
 }
 h4 {

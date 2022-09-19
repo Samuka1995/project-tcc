@@ -1,24 +1,6 @@
 <template>
   <div class="container">
-    <h2>Realize seu Cadastro.</h2>
-    <div class="form-floating mb-3 w-50 mt-5">
-      <input
-        type="name"
-        class="form-control"
-        id="floatingInput"
-        placeholder="Samuel de Souza"
-      />
-      <label class="input-label" for="floatingInput">Nome Completo</label>
-    </div>
-    <div class="form-floating mb-3 w-50">
-      <input
-        type="text"
-        class="form-control"
-        id="floatingInput"
-        placeholder="RA:"
-      />
-      <label class="input-label" for="floatingInput">RA</label>
-    </div>
+    <h2>Recupere sua Senha.</h2>
     <div class="form-floating mb-3 w-50">
       <input
         type="email"
@@ -26,9 +8,7 @@
         id="floatingInput"
         placeholder="name@example.com"
       />
-      <label class="input-label" for="floatingInput"
-        >E-mail Institucional</label
-      >
+      <label class="input-label" for="floatingInput">Código de validação</label>
     </div>
     <div class="form-floating w-50 mb-3">
       <input
@@ -53,21 +33,15 @@
       class="btn w-25 mt-5 mb-4"
       @click="retornaPaginaLogin"
     >
-      Cadastrar
+      Recuperar Senha
     </button>
-    <div class="d-flex mt-5 align-baseline">
-      <p>Ao se cadastrar, você concorda com o nosso</p>
-      <a class="text-decoration-none" href="termo-uso">Termo de Uso</a>
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "BemVindo",
-  props: {
-    msg: String,
-  },
+  name: 'recuperar-senha',
+
   methods: {
     retornaPaginaLogin() {
       this.$router.push({
@@ -75,24 +49,17 @@ export default {
       });
     },
   },
-
-  data() {
-    return {
-      user: "Samuel",
-    };
-  },
 };
 </script>
 
 <style scoped>
 .container {
   margin-top: 50px;
-  background: #111111;
   color: #ffffff;
-  width: 100%;
   align-items: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 .form-floating {
   background: #111111;
@@ -118,15 +85,6 @@ export default {
   background: #767676;
   border-radius: 5px;
 }
-.d-flex {
-  background: #111111;
-  flex-direction: row;
-  align-items: baseline;
-}
-.input-label {
-  background: #767676;
-  border-radius: 5px;
-}
 .btn {
   background: #9146ff;
   color: white;
@@ -140,23 +98,8 @@ export default {
 h2 {
   position: relative;
   right: 40%;
+  bottom: 11%;
   width: 225px;
   background: #111111;
-  top: 7%;
-}
-p {
-  font-size: 20px;
-  background: #111111;
-  color: #767676;
-  margin-right: 5px;
-}
-a {
-  font-size: 16px;
-  background: #111111;
-  color: white;
-  font-weight: 700;
-}
-a:hover {
-  color: #ffffff;
 }
 </style>

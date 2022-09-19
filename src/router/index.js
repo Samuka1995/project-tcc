@@ -1,11 +1,12 @@
+import Login from '@/views'
+import BemVindo from '@/views/bem-vindo'
+import Cadastro from '@/views/cadastro'
+import EmailRecuperarSenha from '@/views/email-recuperar-senha'
+import RecuperarSenha from '@/views/recuperar-senha'
+import ReservaComputador from '@/views/reserva-computador'
+import SolicitacaoReserva from '@/views/solicitacao-reserva'
+import TermoUso from '@/views/termo-uso'
 import { createRouter, createWebHistory } from 'vue-router'
-import Login from '../views/Login.vue'
-import BemVindo from '../components/BemVindo.vue'
-import Cadastro from '../components/Cadastro.vue'
-import TermoUso from '../components/TermoUso'
-import EmailRecuperarSenha from '../components/EmailRecuperarSenha'
-import RecuperarSenha from '../components/RecuperarSenha'
-import SolicitacaoReserva from '../components/SolicitacaoReserva'
 
 const routes = [
   {
@@ -39,17 +40,18 @@ const routes = [
         name: 'login.recuperarsenha',
         component: RecuperarSenha
       },
-
       {
         path: 'solicitacao-reserva',
         name: 'login.solicitacaoreserva',
         component: SolicitacaoReserva
+      },
+      {
+        path: 'reserva-computador',
+        name: 'login.reservacomputador',
+        component: ReservaComputador
       }
-
     ],
   },
-
-
 
 ]
 
