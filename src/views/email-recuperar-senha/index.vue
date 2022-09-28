@@ -1,84 +1,84 @@
 <template>
-  <div class="container">
+<div class="container">
     <h2>E-mail de recuperação de Senha.</h2>
     <div class="form-floating mb-3 w-50">
-      <input
+    <input
         type="email"
         class="form-control"
         id="floatingInput"
         placeholder="name@example.com"
-      />
-      <label class="input-label" for="floatingInput"
+    />
+    <label class="input-label" for="floatingInput"
         >E-mail Institucional</label
-      >
+    >
     </div>
     <button
-      type="submit"
-      class="btn w-25 mt-5 mb-4"
-      @click="retornaPaginaLogin"
+    type="submit"
+    class="btn w-25 mt-5 mb-4"
+    @click="retornaPaginaLogin"
     >
-      Enviar E-mail
+    Enviar E-mail
     </button>
-  </div>
+</div>
 </template>
 
 <script>
 export default {
-  name: 'email-recuperar-senha',
-  methods: {
+name: 'email-recuperar-senha',
+methods: {
     retornaPaginaLogin() {
-      this.$router.push({
+    this.$router.push({
         name: "login.recuperarsenha",
-      });
+    });
     },
-  },
+},
 };
 </script>
 
 <style scoped>
 .container {
-  margin-top: 50px;
-  color: #ffffff;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+margin-top: 50px;
+color: #ffffff;
+align-items: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
 }
 .form-control {
-  border: none;
+border: none;
 }
 .form-control:focus {
-  border-color: #767676;
-  box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
+border-color: #767676;
+box-shadow: 0 0 5px rgba(98, 101, 228, 1) !important;
 }
 #floatingInput {
-  background: #767676;
+background: #767676;
 }
 .form-floating {
-  background: #111111;
-  bottom: 10%;
+background: #111111;
+bottom: 10%;
 }
 .form-floating input {
-  color: white;
+color: white;
 }
 .form-floating > label {
-  background: transparent;
+background: transparent;
 }
 .btn {
-  background: #9146ff;
-  color: white;
-  font-weight: 600;
+background: #9146ff;
+color: white;
+font-weight: 600;
 }
 .btn:hover {
-  background: #9146ff;
-  border: none;
-  height: 38px;
+background: #9146ff;
+border: none;
+height: 38px;
 }
 h2 {
-  position: relative;
-  right: 40%;
-  bottom: 20%;
-  width: 225px;
-  background: #111111;
+position: relative;
+right: 40%;
+bottom: 20%;
+width: 225px;
+background: #111111;
 }
 </style>
