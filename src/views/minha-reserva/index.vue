@@ -1,16 +1,20 @@
 <template>
-    <div class="container-my-reserve">
+    <div v-if="!loading" class="container-my-reserve">
         <div v-for="(datas, index) in data" :key="index" class="container-card">
             <card-reserva :contents="datas"/>
         </div>
         <button @click="openModalCancelReserve" class="button-calcel-reserve">Cancelar minha reserva</button>
     </div>
+
+    <loading v-else />
+
     <modal-cancel-reserve v-if="modalCancelReserve" @close-modal="closeModal" />
 </template>
 
 <script>
     import cardReserva from '@/components/card-reserva'
     import modalCancelReserve from '@/components/modal/modal-cancel-reserve'
+    import loading from '@/components/loading'
 
     const defaultDataContents = [
         {
@@ -25,14 +29,23 @@
 
         components: {
             cardReserva,
-            modalCancelReserve
+            modalCancelReserve,
+            loading
         },
 
         data() {
             return {
                 data: [ ...defaultDataContents ],
-                modalCancelReserve: false
+                modalCancelReserve: false,
+                loading: true
             }
+        },
+
+
+        mounted() {
+            setTimeout(() => {
+                this.loading = false
+            }, 1500)
         },
 
         methods: {
@@ -47,24 +60,24 @@
 </script>
 
 <style scoped>
-.button-calcel-reserve {
-    width: 25%;
-    background: #9146FF;
-    border-radius: 6px;
-    color: #fff;
-    font-weight: 500;
-}
-.container-my-reserve {
-    margin: auto;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-}
-.container-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-}
+    .button-calcel-reserve {
+        width: 25%;
+        background: #9146FF;
+        border-radius: 6px;
+        color: #fff;
+        font-weight: 500;
+    }
+    .container-my-reserve {
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .container-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 50px;
+    }
 </style>

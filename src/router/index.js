@@ -2,6 +2,7 @@ import Login from '@/views'
 import BemVindo from '@/views/bem-vindo'
 import Cadastro from '@/views/cadastro'
 import EmailRecuperarSenha from '@/views/email-recuperar-senha'
+import HistoricoReserva from '@/views/historico-reservas'
 import MinhaReserva from '@/views/minha-reserva'
 import RecuperarSenha from '@/views/recuperar-senha'
 import ReservaComputador from '@/views/reserva-computador'
@@ -56,6 +57,11 @@ const routes = [
                 path: 'minha-reserva',
                 name: 'login.minhareserva',
                 component: MinhaReserva
+            },
+            {
+                path: 'historico-reservas',
+                name: 'login.historicoreservas',
+                component: HistoricoReserva
             }
         ],
     },

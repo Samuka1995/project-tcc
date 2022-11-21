@@ -1,5 +1,5 @@
 <template>
-	<div class="container">
+	<div v-if="!loading" class="container">
 		<div class="container-body">
 		<div class="container-body-contents">
 			<div class="container-contents">
@@ -128,11 +128,15 @@
 
 		<button @click="openReservationModal" type="submit" class="btn w-25 mt-5 mb-4">Reservar</button>
 	</div>
+
+	<loading v-else />
+
 	<modal-confirmar-reserva v-if="modalActive" @close-modal="closeModal"/>
 </template>
 
 <script>
 	import { modalConfirmarReserva } from "@/components/modal";
+    import loading from '@/components/loading'
 
 	const aBcD = ["A", "B", "C", "D"];
 	const oneTwoTreeFour = [" ", "1", "2", "3", "4"];
@@ -159,180 +163,188 @@
 
 		components: {
 			modalConfirmarReserva,
+			loading
 		},
 
 		data() {
 			return {
-			abcds: [...aBcD],
-			computer: [...computers],
-			oneTwoTreeFours: [...oneTwoTreeFour],
-			active: false,
-			modalActive: false,
+				abcds: [...aBcD],
+				computer: [...computers],
+				oneTwoTreeFours: [...oneTwoTreeFour],
+				active: false,
+				modalActive: false,
+				loading: true
 			};
+		},
+
+		mounted() {
+			setTimeout(() => {
+				this.loading = false
+			}, 1500)
 		},
 
 		methods: {
 			openReservationModal(){
-			this.modalActive = true
+				this.modalActive = true
 			},
 			allLab() {
-			this.active = true;
+				this.active = true;
 			},
 			closeModal(){
-			this.modalActive = false
+				this.modalActive = false
 			},
 		},
 	};
 </script>
 
 <style scoped>
-.container {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 50px;
-	flex-direction: column;
-}
-.container-body {
-	width: 500px;
-	height: 380px;
-	border: 1px solid #ffffff;
-	border-radius: 6px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-.container-body-contents {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
-	padding: 10px 30px;
-	align-items: center;
-}
-.container-contents {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-	width: 100%;
-	align-items: center;
-}
-.title {
-	font-weight: 700;
-	font-size: 24px;
-	color: #fff;
-}
-.board {
-	background: #fffafa;
-	display: flex;
-	justify-content: center;
-	font-weight: 500;
-	border-radius: 4px;
-	width: 100%;
-}
-.container-abcd-computer {
-	display: flex;
-	gap: 30px;
-}
-.container-abcd {
-	display: flex;
-	flex-direction: column;
-	color: #fff;
-	font-weight: 500;
-	gap: 15px;
-}
-.abcd {
-	font-size: 20px;
-}
-.container-computer {
-	display: flex;
-	flex-wrap: wrap;
-	height: 25px;
-}
-.computer-icon {
-	width: 90px;
-	height: 47px;
-	display: flex;
-	justify-content: center;
-}
-.container-onetwotreefour {
-	width: 100%;
-	color: #fff;
-	font-weight: 700;
-	display: flex;
-	gap: 82px;
-}
-.container-oval-input {
-	display: flex;
-	gap: 10px;
-	align-items: center;
-	cursor: pointer;
-}
-.oval-input {
-	width: 18px;
-	height: 18px;
-	background: #fff;
-	border-radius: 50%;
-}
-.oval-input-true {
-	background: #9146ff;
-}
-.reserve-all-lab {
-	font-weight: 16px;
-	font-weight: 500;
-	color: #fff;
-}
-.container-footer {
-	width: 500px;
-	display: flex;
-	justify-content: space-between;
-	margin-top: 30px;
-}
-.machine-free-selected {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.machine-maintenance-unavailable {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
-}
-.machine-free,
-.machine-maintenance,
-.machine-selected,
-.machine-unavailable {
-	display: flex;
-	gap: 10px;
-}
-.free,
-.selected,
-.maintenance,
-.unavailable {
-	font-size: 20px;
-	font-weight: 500;
-	color: #fff;
-}
-.free {
-	color: #fff;
-}
-.selected {
-	color: #9146ff;
-}
-.maintenance {
-	color: #f12424;
-}
-.unavailable {
-	color: #fbff46;
-}
-.btn {
-	background: #9146ff;
-	color: white;
-	font-weight: 600;
-}
-.btn:hover {
-	background: #9146ff;
-	color: #fff;
-}
+	.container {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 50px;
+		flex-direction: column;
+	}
+	.container-body {
+		width: 500px;
+		height: 380px;
+		border: 1px solid #ffffff;
+		border-radius: 6px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.container-body-contents {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 10px 30px;
+		align-items: center;
+	}
+	.container-contents {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		width: 100%;
+		align-items: center;
+	}
+	.title {
+		font-weight: 700;
+		font-size: 24px;
+		color: #fff;
+	}
+	.board {
+		background: #fffafa;
+		display: flex;
+		justify-content: center;
+		font-weight: 500;
+		border-radius: 4px;
+		width: 100%;
+	}
+	.container-abcd-computer {
+		display: flex;
+		gap: 30px;
+	}
+	.container-abcd {
+		display: flex;
+		flex-direction: column;
+		color: #fff;
+		font-weight: 500;
+		gap: 15px;
+	}
+	.abcd {
+		font-size: 20px;
+	}
+	.container-computer {
+		display: flex;
+		flex-wrap: wrap;
+		height: 25px;
+	}
+	.computer-icon {
+		width: 90px;
+		height: 47px;
+		display: flex;
+		justify-content: center;
+	}
+	.container-onetwotreefour {
+		width: 100%;
+		color: #fff;
+		font-weight: 700;
+		display: flex;
+		gap: 82px;
+	}
+	.container-oval-input {
+		display: flex;
+		gap: 10px;
+		align-items: center;
+		cursor: pointer;
+	}
+	.oval-input {
+		width: 18px;
+		height: 18px;
+		background: #fff;
+		border-radius: 50%;
+	}
+	.oval-input-true {
+		background: #9146ff;
+	}
+	.reserve-all-lab {
+		font-weight: 16px;
+		font-weight: 500;
+		color: #fff;
+	}
+	.container-footer {
+		width: 500px;
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+	.machine-free-selected {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.machine-maintenance-unavailable {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.machine-free,
+	.machine-maintenance,
+	.machine-selected,
+	.machine-unavailable {
+		display: flex;
+		gap: 10px;
+	}
+	.free,
+	.selected,
+	.maintenance,
+	.unavailable {
+		font-size: 20px;
+		font-weight: 500;
+		color: #fff;
+	}
+	.free {
+		color: #fff;
+	}
+	.selected {
+		color: #9146ff;
+	}
+	.maintenance {
+		color: #f12424;
+	}
+	.unavailable {
+		color: #fbff46;
+	}
+	.btn {
+		background: #9146ff;
+		color: white;
+		font-weight: 600;
+	}
+	.btn:hover {
+		background: #9146ff;
+		color: #fff;
+	}
 </style>
