@@ -9,9 +9,9 @@
 
 			<div class="container-abcd-computer">
 			<div class="container-abcd">
-				<span v-for="(abcd, index) in abcds" :key="index" class="abcd">{{
-				abcd
-				}}</span>
+				<span v-for="(abcd, index) in abcds" :key="index" class="abcd">
+					{{abcd}}
+				</span>
 			</div>
 
 			<div class="container-computer">
@@ -24,9 +24,10 @@
 					xmlns="http://www.w3.org/2000/svg"
 					width="22"
 					height="22"
-					fill="#fff"
+					:fill="computers.statusComputador"
 					class="bi bi-pc-display-horizontal"
 					viewBox="0 0 16 16"
+					cursor="pointer"
 				>
 					<path
 					d="M1.5 0A1.5 1.5 0 0 0 0 1.5v7A1.5 1.5 0 0 0 1.5 10H6v1H1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5v-1h4.5A1.5 1.5 0 0 0 16 8.5v-7A1.5 1.5 0 0 0 14.5 0h-13Zm0 1h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5ZM12 12.5a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0Zm2 0a.5.5 0 1 1 1 0 .5.5 0 0 1-1 0ZM1.5 12h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1ZM1 14.25a.25.25 0 0 1 .25-.25h5.5a.25.25 0 1 1 0 .5h-5.5a.25.25 0 0 1-.25-.25Z"
@@ -136,27 +137,75 @@
 
 <script>
 	import { modalConfirmarReserva } from "@/components/modal";
-    import loading from '@/components/loading'
+	import loading from '@/components/loading'
 
 	const aBcD = ["A", "B", "C", "D"];
 	const oneTwoTreeFour = [" ", "1", "2", "3", "4"];
 	const computers = [
-		{ computador: 1 },
-		{ computador: 2 },
-		{ computador: 3 },
-		{ computador: 4 },
-		{ computador: 5 },
-		{ computador: 6 },
-		{ computador: 7 },
-		{ computador: 8 },
-		{ computador: 9 },
-		{ computador: 10 },
-		{ computador: 11 },
-		{ computador: 12 },
-		{ computador: 13 },
-		{ computador: 14 },
-		{ computador: 15 },
-		{ computador: 16 },
+		{
+			computador: 1,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 2,
+			statusComputador: '#f12424',
+		},
+		{
+			computador: 3,
+			statusComputador: '#fbff46',
+		},
+		{
+			computador: 4,
+			statusComputador: '#9146ff',
+		},
+		{
+			computador: 5,
+			statusComputador: '#f12424',
+		},
+		{
+			computador: 6,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 7,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 8,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 9,
+			statusComputador: '#f12424',
+		},
+		{
+			computador: 10,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 11,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 12,
+			statusComputador: '#f12424',
+		},
+		{
+			computador: 13,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 14,
+			statusComputador: '#fff',
+		},
+		{
+			computador: 15,
+			statusComputador: '#fbff46',
+		},
+		{
+			computador: 16,
+			statusComputador: '#fff',
+		},
 	];
 	export default {
 		name: "reserva-computador",

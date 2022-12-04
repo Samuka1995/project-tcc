@@ -88,11 +88,11 @@
         data() {
             return {
                 loading: true,
-                nomeAluno: null,
-                raAluno: null,
-                emailAluno: null,
-                password: null,
-                confirmarPassword: null,
+                nomeAluno: '',
+                raAluno: '',
+                emailAluno: '',
+                password: '',
+                confirmarPassword: '',
                 formularios: [],
                 erro: []
             };

@@ -31,8 +31,8 @@
         setup() {
                 const date = ref(new Date());
                 const highlightedDates = ref([
-                    addDays(new Date(), 5),
                     addDays(new Date(), 6),
+                    addDays(new Date(), 7),
                 ])
 
                 return {

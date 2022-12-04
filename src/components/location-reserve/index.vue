@@ -27,7 +27,7 @@
         name: "location-reserve",
 
         props: {
-                data: {
+            data: {
                 type: [Array, Object],
                 required: true,
             },

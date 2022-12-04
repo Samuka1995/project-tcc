@@ -1,11 +1,14 @@
 <template>
     <div v-for="(datas, index) in data" :key="index" class="container-historic-reservations">
-        <card-reserva :contents="datas"></card-reserva>
+        <card-reserva :contents="datas" v-if="!loading" />
+
+        <loading v-else />
     </div>
 </template>
 
 <script>
     import CardReserva from '@/components/card-reserva'
+    import loading from '@/components/loading'
 
     const defaultDataContents = [
         {
@@ -20,13 +23,21 @@
         name: 'historico-reservas',
 
         components: {
-            CardReserva
+            CardReserva,
+            loading
         },
 
         data() {
             return {
-                data: [ ...defaultDataContents ]
+                data: [ ...defaultDataContents ],
+                loading: true
             }
+        },
+
+        mounted() {
+            setTimeout(() => {
+                this.loading = false
+            }, 1500)
         },
     }
 </script>

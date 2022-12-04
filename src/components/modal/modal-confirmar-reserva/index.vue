@@ -25,6 +25,14 @@
 <script>
 	export default {
 		name: "modal-confirmar-reserva",
+
+		methods: {
+			minhaReserva() {
+				this.$router.push({
+					name: 'login.minhareserva'
+				})
+			}
+		}
 	};
 </script>
 

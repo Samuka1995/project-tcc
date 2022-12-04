@@ -2,8 +2,10 @@
     <div v-if="!loading" class="container">
         <h2>Bem vindo, faça o Login.</h2>
 
+        <p class="erro" v-for="(erros, index) in error" :key="index">{{ erros }}</p>
+
         <div class="form-floating mb-5 w-50">
-            <input
+            <input v-model="emailLogin"
                 type="email"
                 class="form-control"
                 id="floatingInput"
@@ -13,7 +15,7 @@
         </div>
 
         <div class="form-floating w-50">
-            <input
+            <input v-model="passwordLogin"
                 type="password"
                 class="form-control"
                 id="floatingPassword"
@@ -36,12 +38,18 @@
                 <span>Novo Cadastro</span>
             </router-link>
         </ul>
+
+        <!-- <div v-for="(pokemon, index) in pokemons" :key="index">
+            {{ pokemon.url }}
+        </div> -->
     </div>
     <loading v-else />
 </template>
 
 <script>
+    // import api from "@/services/api"
     import loading from '@/components/loading'
+    // import { onMounted, ref } from 'vue';
 
     export default {
         name: "bem-vindo",
@@ -56,22 +64,58 @@
 
         data() {
             return {
-                loading: true
+                loading: true,
+                emailLogin: '',
+                passwordLogin: '',
+                error: []
             };
         },
+
+        // setup() {
+        //     const pokemons = ref([])
+
+        //     const fetchPokemons = () =>
+        //     api.get('/pokemon?limit=20')
+        //     .then((response) => pokemons.value = response.data.results)
+
+        //     onMounted(fetchPokemons)
+
+        //     return {pokemons}
+        // },
 
         mounted() {
             setTimeout(() => {
                 this.loading = false
             }, 1500)
+
+            console.log(this.email);
+            console.log(this.password);
         },
 
         methods: {
             solicitacaoReserva() {
+                this.validaCampoPreenchido()
+
                 this.$router.push({
                     name: "login.solicitacaoreserva",
                 });
+
             },
+
+            validaCampoPreenchido(e) {
+                if (this.emailLogin && this.passwordLogin) {
+                        return true
+                }
+
+                this.error = []
+
+                if (!this.emailLogin && !this.passwordLogin){
+                    this.error.push('Todos os campos são Obrigatórios')
+                }
+
+                e.preventDefault()
+
+            }
         },
     };
 </script>
@@ -85,6 +129,11 @@
         align-items: center;
         display: flex;
         flex-direction: column;
+    }
+    .erro {
+        position: absolute;
+        top: 235px;
+        color: red;
     }
     .form-floating {
         background: #111111;
